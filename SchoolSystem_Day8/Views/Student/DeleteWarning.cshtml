@@ -1,0 +1,15 @@
+@model SchoolSystem.Models.Student
+
+@{
+    ViewData["Title"] = "Delete Warning";
+}
+
+<div class="alert alert-danger mt-3">
+    <h4>Confirm Delete</h4>
+    <p>Are you sure you want to delete <strong>@Model.Name</strong>?</p>
+</div>
+<form asp-action="DeleteConfirmed" asp-route-id="@Model.Id" method="post">
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="GetAll" class="btn btn-secondary">Cancel</a>
+</form>

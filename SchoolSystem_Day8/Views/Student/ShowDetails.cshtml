@@ -1,0 +1,16 @@
+@model SchoolSystem.Models.Student
+
+@{
+    ViewData["Title"] = "Student Details";
+}
+
+<h2>Student Details</h2>
+<div class="card mt-3 mb-3">
+    <div class="card-body">
+        <p><strong>ID:</strong> @Model.Id</p>
+        <p><strong>Name:</strong> @Model.Name</p>
+        <p><strong>Age:</strong> @Model.Age</p>
+        <p><strong>Department:</strong> @Model.Department?.Name</p>
+    </div>
+</div>
+<a asp-controller="Student" asp-action="GetAll" class="btn btn-secondary">Back</a>
